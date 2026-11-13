@@ -1,0 +1,179 @@
+/* FL / SOFT GLASS — 2026
+   Visual layer only. Original React, authentication, D1 integrations and admin
+   logic remain in place. This sheet keeps the original Inter typeface. */
+:root {
+  --fl-navy:#132a49;--fl-blue:#2b65bc;--fl-blue-dark:#1c4c90;
+  --fl-ice:#eaf5ff;--fl-muted:#61748e;--fl-line:#dce8f4;
+  --fl-paper:#f8fbff;--fl-radius:18px;
+  --fl-shadow:0 20px 54px rgba(46,81,124,.08),0 3px 14px rgba(46,81,124,.025)
+}
+html {scroll-padding-top:110px}
+body {background:var(--fl-paper);color:var(--fl-navy)}
+body .text-heading {color:var(--fl-navy)}
+body .text-slate-600 {color:#586e88}
+body .text-slate-500 {color:#637894}
+#root {min-height:100vh;isolation:isolate}
+.fl-skip-link {position:fixed;z-index:1000;top:-100px;left:16px;padding:12px 20px;background:#fff;color:var(--fl-navy);border:2px solid var(--fl-blue);border-radius:12px}
+.fl-skip-link:focus {top:12px}
+.ambient-blobs {pointer-events:none;opacity:.36}
+.ambient-blobs .blob {animation:none!important;filter:blur(110px)!important;opacity:.28!important}
+.ambient-blobs .blob:nth-child(n+3) {display:none}
+#root > .pointer-events-none.fixed.inset-0 {opacity:.18}
+.fl-main {position:relative;min-height:60vh}
+.fl-main a:focus-visible,.fl-header a:focus-visible,.fl-main button:focus-visible,.fl-header button:focus-visible {outline:3px solid #4c94f5;outline-offset:3px}
+
+/* Floating navigation */
+.fl-header {position:fixed;inset:0 0 auto;z-index:80;display:flex;justify-content:center;padding:19px 20px 0;pointer-events:none}
+.fl-navbar {width:min(100%,1108px);min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:9px 14px 9px 16px;border:1px solid rgba(255,255,255,.94);border-radius:19px;background:rgba(255,255,255,.84);box-shadow:0 8px 36px rgba(34,73,122,.075),0 1px 2px rgba(34,73,122,.05);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);pointer-events:auto;transition:background .2s,box-shadow .2s}
+.fl-header-scrolled .fl-navbar {background:rgba(255,255,255,.95);box-shadow:0 12px 36px rgba(34,73,122,.12)}
+.fl-brand {display:inline-flex;align-items:center;gap:11px;min-width:0;flex:none;text-decoration:none;color:var(--fl-navy)}
+.fl-brand-symbol {display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:#dfeefe;color:#1d59a6;border:1px solid #c9e0fa;font-size:12px;font-weight:800;letter-spacing:-.04em}
+.fl-brand-name {font-size:14px;font-weight:700;letter-spacing:-.035em;white-space:nowrap}
+.fl-desktop-links {display:flex;gap:3px;align-items:center;justify-content:center}
+.fl-nav-link {display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;border-radius:12px;color:#536880;font-size:13px;font-weight:550;line-height:1;text-decoration:none;transition:background .18s,color .18s}
+.fl-nav-link:hover {color:#245da9;background:#f2f7ff}
+.fl-nav-link.is-active {color:#1e518f;background:#eaf3ff;font-weight:700}
+.fl-nav-tools {display:flex;align-items:center;gap:5px;flex:none}
+.fl-nav-tools .fl-language-switch {display:inline-flex}
+.fl-nav-tools button[aria-label] {flex:none}
+.fl-menu-toggle {display:none;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #e3ebf6;border-radius:12px;color:var(--fl-navy);background:#f7faff}
+.fl-mobile-menu {position:absolute;top:calc(100% + 8px);width:min(calc(100% - 40px),1108px);display:none;flex-direction:column;gap:3px;padding:12px;background:#fff;border:1px solid #e4eef8;border-radius:18px;box-shadow:0 18px 54px rgba(18,43,81,.16);pointer-events:auto}
+.fl-mobile-link {padding:13px 15px;color:var(--fl-navy);font-size:15px;border-radius:11px;text-decoration:none}
+.fl-mobile-link:hover,.fl-mobile-link.is-active {background:#edf5ff;color:#245ca9}
+
+/* Large centerpiece, familiar business-card concept */
+.fl-hero-section {padding:158px 0 48px;position:relative}
+.fl-hero-card {display:grid;grid-template-columns:minmax(0,1.45fr) minmax(285px,.75fr);min-height:488px;overflow:hidden;border:1px solid rgba(255,255,255,.95);border-radius:23px;background:rgba(255,255,255,.89);box-shadow:0 36px 100px rgba(49,94,147,.1),0 2px 10px rgba(49,94,147,.04);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.fl-hero-main {position:relative;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,5.2vw,78px) clamp(28px,5.2vw,74px)}
+.fl-hero-main::before {position:absolute;content:"";left:clamp(28px,5.2vw,74px);top:33px;width:52px;height:3px;border-radius:12px;background:#83bbf2}
+.fl-hero-topline {display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:8px 11px;border:1px solid #d6e9f2;border-radius:30px;background:#f2fbff;color:#336483;font-size:11px;font-weight:600}
+.fl-status-dot {height:6px;width:6px;border-radius:50%;background:#41bca2;box-shadow:0 0 0 3px rgba(65,188,162,.12)}
+.fl-hero-kicker {margin-top:31px;color:#7086a0;font-size:10px;letter-spacing:.19em;font-weight:750}
+.fl-hero-heading {max-width:650px;margin-top:11px;font-size:clamp(46px,5.3vw,78px);line-height:1.04;letter-spacing:-.07em;font-weight:750;color:#173250}
+.fl-hero-heading span {color:#438bd6}
+.fl-hero-role {margin-top:18px;color:#2f6fb8;font-weight:650;font-size:16px;letter-spacing:.015em}
+.fl-hero-description {margin-top:17px;max-width:530px;color:#5d7189;font-size:15px;line-height:1.85}
+.fl-hero-actions {display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.fl-button {display:inline-flex;align-items:center;justify-content:center;gap:13px;min-height:48px;padding:0 20px;border-radius:13px;font-size:13px;font-weight:700;transition:transform .16s,background .16s,box-shadow .16s;text-decoration:none!important}
+.fl-button:hover {transform:translateY(-1px)}
+.fl-button-primary {background:#2965b8;color:white;box-shadow:0 5px 15px rgba(34,96,176,.17)}
+.fl-button-primary:hover {background:#1e579f;color:white}
+.fl-button-quiet {background:#f1f6fc;color:#2a5685;border:1px solid #e3edf7}
+.fl-button-quiet:hover {background:#e7f1fd}
+.fl-hero-aside {display:flex;flex-direction:column;justify-content:center;padding:46px clamp(25px,3vw,48px);background:linear-gradient(165deg,#eff8ff 0%,#e8f3ff 70%,#e5f1fd 100%);border-left:1px solid #e1edf8}
+.fl-hero-aside-overline {font-size:10px;font-weight:750;letter-spacing:.18em;color:#6a8cad}
+.fl-hero-aside-list {margin-top:21px}
+.fl-hero-aside-list>div {display:flex;align-items:baseline;gap:21px;padding:20px 0;border-bottom:1px solid #d1e2f4;color:#173e69}
+.fl-hero-aside-list>div span {font-size:11px;color:#6d94bc;font-weight:700;letter-spacing:.1em}
+.fl-hero-aside-list>div strong {font-size:16px;font-weight:650;letter-spacing:-.03em}
+.fl-aside-link {display:inline-flex;align-items:center;gap:10px;align-self:flex-start;margin-top:27px;color:#1f61a8;font-size:13px;font-weight:750;text-decoration:none}
+.fl-aside-link:hover {color:#163e77}
+.fl-under-hero {display:flex;justify-content:space-between;gap:12px;margin:22px 5px 0;font-size:11px;color:#71859e}
+.fl-under-hero span:last-child {letter-spacing:.08em;font-size:10px;color:#8ca0b5}
+
+/* Existing sections are retained, refined rather than replaced */
+.fl-main #services {padding-top:76px;padding-bottom:58px}
+.fl-main #services .container-page,.fl-main #about .container-page,.fl-main #work .container-page {max-width:1130px}
+.fl-main #services .grid {max-width:1000px;gap:13px}
+.fl-main #services .grid > div {background:rgba(255,255,255,.85);border:1px solid #e1eaf3;border-radius:17px;padding:24px 21px;box-shadow:0 8px 22px rgba(35,82,132,.035)}
+.fl-main #services .grid > div:hover {box-shadow:0 12px 34px rgba(35,82,132,.075);transform:translateY(-2px)}
+.fl-main #services .grid h3 {font-size:15px}
+.fl-main #services .grid p {line-height:1.65}
+.fl-main #work {padding-top:66px;padding-bottom:74px}
+.fl-main #work .glass {background:rgba(255,255,255,.87);border-color:#e0eaf5;border-radius:19px;box-shadow:var(--fl-shadow)}
+.fl-main #work img {object-fit:cover}
+.fl-main #about {padding-top:64px;padding-bottom:70px}
+.fl-main #about .glass {background:rgba(255,255,255,.68);border-color:#e2ebf5;border-radius:17px}
+.fl-main #contact {padding-top:38px;padding-bottom:85px}
+.fl-main #contact .glass {background:#fff;border-color:#e0e9f4;border-radius:20px;box-shadow:var(--fl-shadow)}
+.fl-main #contact input,.fl-main #contact textarea {background:rgba(249,252,255,.98);border-color:#dce6f1;border-radius:13px}
+.fl-main #contact input:focus,.fl-main #contact textarea:focus {border-color:#5b98db;box-shadow:0 0 0 3px rgba(63,138,217,.12)}
+.fl-main #contact button[type=submit] {border-radius:13px;background:#2b69be;min-height:51px;box-shadow:0 7px 17px rgba(30,95,177,.12)}
+.fl-form-group-heading {padding-top:12px;font-size:14px;font-weight:750;color:#203d5f}
+.fl-form-group-caption {margin-top:-9px!important;font-size:12px;color:#697e97;line-height:1.55}
+.fl-main .glass,.fl-main .glass-strong {backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.fl-main h2 {letter-spacing:-.05em}
+.fl-main .text-heading {color:#173250}
+.fl-main .rounded-3xl {border-radius:20px}
+.fl-main .rounded-2xl {border-radius:15px}
+
+/* Route-specific compositions */
+.fl-page-intro {padding-top:168px;padding-bottom:5px}
+.fl-page-intro-inner {max-width:785px}
+.fl-eyebrow {display:block;color:#397cb9;letter-spacing:.17em;font-size:11px;font-weight:750;text-transform:uppercase}
+.fl-page-intro h1 {margin-top:17px;color:#143251;font-weight:750;font-size:clamp(38px,5.6vw,64px);line-height:1.12;letter-spacing:-.055em}
+.fl-page-intro p {max-width:630px;margin-top:19px;color:#627790;font-size:17px;line-height:1.75}
+body[data-fl-page=sluzby] #services {padding-top:52px}
+body[data-fl-page=sluzby] #services .container-page > div:first-child {text-align:left;max-width:none}
+body[data-fl-page=sluzby] #services .grid {margin-left:0;max-width:none}
+.fl-detail-services {margin:20px auto 90px}
+.fl-service-detail {display:grid;grid-template-columns:70px minmax(0,1.4fr) minmax(210px,.8fr);gap:20px;align-items:start;border-top:1px solid #dce8f2;padding:29px 12px 35px}
+.fl-service-detail:last-child {border-bottom:1px solid #dce8f2}
+.fl-service-index {font-size:13px;font-weight:700;color:#3c8bc5;letter-spacing:.08em}
+.fl-service-detail h3 {font-size:clamp(19px,2vw,25px);font-weight:720;color:#173452;letter-spacing:-.035em}
+.fl-service-detail p {max-width:600px;font-size:14px;line-height:1.75;margin-top:11px;color:#647991}
+.fl-service-detail ul {display:grid;gap:10px;padding-top:6px}
+.fl-service-detail li {font-size:13px;color:#3e5d7f;display:flex;gap:9px;align-items:baseline}
+.fl-service-detail li::before {content:"";width:5px;height:5px;background:#6eacd8;border-radius:50%;flex:none}
+.fl-home-note>div {display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:54px;border-top:1px solid #e1e9f3}
+.fl-home-note p {font-size:13px;color:#647994;max-width:490px}
+.fl-home-note a {font-size:13px;font-weight:700;color:#2066ae;text-decoration:none;white-space:nowrap}
+.fl-cta-container {padding-bottom:78px}
+.fl-cta {display:flex;align-items:center;justify-content:space-between;gap:30px;padding:clamp(27px,5vw,55px);border-radius:22px;background:#173b65;color:#fff}
+.fl-cta .fl-eyebrow {color:#a1c9f1}
+.fl-cta h2 {margin-top:12px;font-size:clamp(25px,3.4vw,38px);font-weight:730;line-height:1.2;letter-spacing:-.045em;color:#fff}
+.fl-cta p {margin-top:11px;font-size:13px;line-height:1.7;color:#c8d9eb}
+.fl-button-light {background:#e5f3ff;color:#1d4f83;white-space:nowrap}
+.fl-button-light:hover {background:#fff;color:#1d4f83}
+
+/* Preserve original footer actions, simplify visual finish */
+#root footer {background:rgba(255,255,255,.62);border-top:1px solid #e1ebf3;margin-top:40px}
+#root footer .container-page {max-width:1110px}
+#root footer button:hover {color:#1d6ab7}
+
+/* Dark mode: navy, not black */
+html.dark body {background:#0f1d32;color:#d6e5f6}
+html.dark body .text-heading,html.dark .fl-main .text-heading {color:#e8f2ff}
+html.dark .fl-navbar {background:rgba(22,39,65,.94);border-color:#304967;box-shadow:0 10px 33px rgba(0,0,0,.18)}
+html.dark .fl-brand,html.dark .fl-brand-name {color:#edf5ff}
+html.dark .fl-brand-symbol {background:#24446a;color:#c6e5ff;border-color:#355879}
+html.dark .fl-nav-link {color:#b6c9dd}
+html.dark .fl-nav-link:hover,html.dark .fl-nav-link.is-active {background:#254669;color:#e7f4ff}
+html.dark .fl-menu-toggle {background:#213a59;border-color:#355274;color:#dbeafd}
+html.dark .fl-mobile-menu {background:#172b47;border-color:#314b69}
+html.dark .fl-mobile-link {color:#dbeaff}
+html.dark .fl-mobile-link:hover,html.dark .fl-mobile-link.is-active {background:#27476a}
+html.dark .fl-hero-card {background:rgba(23,40,64,.96);border-color:#344d6d;box-shadow:0 24px 70px rgba(0,0,0,.2)}
+html.dark .fl-hero-heading,html.dark .fl-page-intro h1,html.dark .fl-service-detail h3 {color:#eff6ff}
+html.dark .fl-hero-heading span {color:#94caff}
+html.dark .fl-hero-description,html.dark .fl-page-intro p,html.dark .fl-service-detail p {color:#b4c8dc}
+html.dark .fl-hero-topline {background:#1c3b4e;border-color:#35586a;color:#b8e7d9}
+html.dark .fl-hero-aside {background:linear-gradient(145deg,#1a3556,#1d3d62);border-left-color:#355271}
+html.dark .fl-hero-aside-overline,html.dark .fl-service-index {color:#9cc8f2}
+html.dark .fl-hero-aside-list>div {border-bottom-color:#375474;color:#e0efff}
+html.dark .fl-hero-aside-list>div span {color:#8fb6dc}
+html.dark .fl-aside-link {color:#c9e4ff}
+html.dark .fl-under-hero,html.dark .fl-home-note p {color:#91a9c3}
+html.dark .fl-button-quiet {background:#274263;border-color:#36587d;color:#e2f1ff}
+html.dark .fl-main #services .grid > div,html.dark .fl-main #contact .glass,html.dark .fl-main #work .glass,html.dark .fl-main #about .glass {background:rgba(24,43,69,.94);border-color:#324b67}
+html.dark .fl-main #contact input,html.dark .fl-main #contact textarea {background:#162c48;color:#f0f7ff;border-color:#3a5678}
+html.dark .fl-form-group-heading {color:#dceeff}
+html.dark .fl-form-group-caption,html.dark .fl-service-detail li {color:#a7bdd7}
+html.dark .fl-service-detail,html.dark .fl-service-detail:last-child,html.dark .fl-home-note>div {border-color:#344e6c}
+html.dark #root footer {background:rgba(16,33,55,.8);border-color:#314a67}
+
+@media(min-width:1450px){.fl-hero-section{padding-top:175px}}
+@media(max-width:1050px){.fl-header{padding-top:14px}.fl-navbar{gap:8px}.fl-nav-link{padding:10px 8px;font-size:12px}.fl-hero-main{padding:42px}.fl-hero-card{grid-template-columns:minmax(0,1.25fr) minmax(265px,.75fr)}.fl-hero-heading{font-size:clamp(46px,5.5vw,65px)}}
+@media(max-width:820px){.fl-desktop-links{display:none}.fl-menu-toggle{display:flex}.fl-mobile-menu.is-open{display:flex}.fl-nav-tools{gap:7px}.fl-hero-card{grid-template-columns:1fr}.fl-hero-aside{border-left:0;border-top:1px solid #e1edf8;padding:30px 38px}.fl-hero-aside-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.fl-hero-aside-list>div{display:flex;flex-direction:column;gap:9px;padding:13px 0}.fl-hero-aside-list>div strong{font-size:14px}.fl-hero-aside-overline{font-size:10px}.fl-hero-section{padding-top:134px}.fl-hero-card{min-height:0}.fl-service-detail{grid-template-columns:50px 1fr}.fl-service-detail ul{grid-column:2}}
+@media(max-width:600px){.fl-header{padding:12px 12px 0}.fl-navbar{width:100%;min-height:58px;padding:8px 9px 8px 10px;border-radius:15px}.fl-brand{gap:8px}.fl-brand-symbol{height:35px;width:35px;font-size:11px;border-radius:10px}.fl-brand-name{font-size:12px}.fl-nav-tools{gap:3px}.fl-nav-tools .fl-language-switch{display:none}.fl-menu-toggle{height:36px;width:36px}.fl-mobile-menu{width:calc(100% - 24px);top:calc(100% + 6px)}.fl-hero-section{padding:108px 0 35px}.fl-hero-main{padding:38px 24px 31px}.fl-hero-card{border-radius:19px}.fl-hero-main::before{left:24px;top:18px;width:35px;height:2px}.fl-hero-kicker{margin-top:26px;font-size:9px;letter-spacing:.11em}.fl-hero-heading{margin-top:11px;font-size:clamp(39px,10.4vw,56px);line-height:1.06}.fl-hero-role{margin-top:13px;font-size:14px}.fl-hero-description{font-size:14px;line-height:1.77}.fl-hero-actions{gap:8px;margin-top:24px}.fl-button{width:100%;min-height:48px}.fl-hero-aside{padding:25px}.fl-hero-aside-list{display:block;margin-top:13px}.fl-hero-aside-list>div{flex-direction:row;padding:13px 0}.fl-hero-aside-list>div strong{font-size:14px}.fl-hero-aside-list>div span{min-width:20px}.fl-under-hero{display:block;font-size:11px;line-height:1.6}.fl-under-hero span:last-child{display:none}.fl-main #services{padding-top:50px;padding-bottom:20px}.fl-main #services .grid>div{padding:20px}.fl-main #work{padding-top:35px;padding-bottom:45px}.fl-main #about{padding-top:45px;padding-bottom:40px}.fl-main #contact{padding-top:25px}.fl-page-intro{padding-top:122px;padding-bottom:0}.fl-page-intro h1{font-size:clamp(35px,9.8vw,48px)}.fl-page-intro p{font-size:14px;line-height:1.7}.fl-service-detail{grid-template-columns:35px 1fr;gap:10px;padding:25px 0}.fl-service-detail h3{font-size:21px}.fl-service-detail ul{padding-top:8px}.fl-home-note>div{flex-wrap:wrap;padding-top:30px}.fl-home-note p{flex:1 1 100%;order:2}.fl-cta{padding:26px;display:flex;flex-direction:column;align-items:stretch;gap:22px}.fl-cta-container{padding-bottom:55px}.fl-cta h2{font-size:27px}.fl-main #contact .glass{padding:20px}.fl-form-group-heading{padding-top:5px}}
+@media(prefers-reduced-motion:reduce){.fl-navbar,.fl-button,.fl-main #services .grid > div,.fl-nav-link{transition:none!important;animation:none!important}.fl-button:hover,.fl-main #services .grid > div:hover{transform:none!important}}
+/* Final polish from live viewport QA */
+.fl-mobile-language-row {display:flex;justify-content:flex-start;align-items:center;padding:12px 14px 5px;margin-top:7px;border-top:1px solid #e3ebf5}
+html.dark .fl-mobile-language-row {border-color:#33516e}
+.fl-form-group-caption {margin-top:0!important;line-height:1.65}
+.fl-main #services .grid > div,.fl-main #services .container-page > div:first-child {opacity:1!important;transform:none!important}
+body[data-fl-page=kontakt] #contact .container-page > .grid {display:block;max-width:830px;margin:0 auto}
+body[data-fl-page=kontakt] #contact .container-page > .grid > div:first-child {display:none}
+body[data-fl-page=kontakt] #contact .container-page > .grid > div:nth-child(2) {width:100%}
+body[data-fl-page=kontakt] #contact {padding-top:38px}
+@media(max-width:600px){body[data-fl-page=kontakt] #contact {padding-top:28px}}
